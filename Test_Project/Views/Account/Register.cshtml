@@ -1,0 +1,76 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ad_Soyad"></label>
+                <input asp-for="Ad_Soyad" class="form-control" />
+                <span asp-validation-for="Ad_Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon_No"></label>
+                <input asp-for="Telefon_No" class="form-control" />
+                <span asp-validation-for="Telefon_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cinsiyet"></label>
+                <input asp-for="Cinsiyet" class="form-control" />
+                <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dogum_Tarihi"></label>
+                <input type="date" asp-for="Dogum_Tarihi" class="form-control" />
+                <span asp-validation-for="Dogum_Tarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ogrenim_Durumu"></label>
+                <input asp-for="Ogrenim_Durumu" class="form-control" />
+                <span asp-validation-for="Ogrenim_Durumu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meslek"></label>
+                <input asp-for="Meslek" class="form-control" />
+                <span asp-validation-for="Meslek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medeni_Durum"></label>
+                <input asp-for="Medeni_Durum" class="form-control" />
+                <span asp-validation-for="Medeni_Durum" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-default">Register</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body onload="aranan_yukle()">
+
+
+        <center>
+            <div id="aranan_div">
+                <p id="aranan_kelimeler"></p>
+            </div>
+        </center>
+        <br />
+        <br />
+        <p id="demo2"></p>
+        <p id="demo"></p>
+        <br />
+
+    <table id="tbl1" style="width:45% ; display: inline-block;float: left;visibility:hidden;">
+        <caption>Migros Sonuçları</caption>
+        <tr>
+            <th>Ürün Resmi</th>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+            <th>Link</th>
+        </tr>
+        <tr></tr>
+    </table>
+
+    <table id="tbl2" style="width:45% ; display: inline-block ;float:right;visibility:hidden;">
+        <caption>Carrefoursa Sonuçları</caption>
+        <tr>
+            <th>Ürün Resmi</th>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+            <th>Link</th>
+        </tr>
+        <tr></tr>
+    </table>
+</body>
+
