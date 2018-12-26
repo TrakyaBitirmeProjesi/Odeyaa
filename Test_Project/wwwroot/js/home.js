@@ -47,10 +47,15 @@ function post_func() {
         },
         data: { "product-name": product },
         success: function (response) {
+            var limit = 10;
             document.getElementById("tbl1").style.visibility = "visible";
             var table = document.getElementById("tbl1");
             var row = table.insertRow();
-            for (var i in response) {
+            if (response.length < 10) {
+                limit = response.length;
+            }
+            var i;
+            for (i = 0; i < limit; i++) {
                 arr.push(["<img height='100' width='100' src=" + response[i].resim + " >", response[i].urun, response[i].fiyat + " TL", "<a href=" + response[i].link + ">Git</a>"])
                 var row = table.insertRow();
                 var cell1 = row.insertCell();
@@ -84,10 +89,15 @@ function post_func2() {
             withCredentials: false
         },
         success: function (response) {
+            var limit = 10;
             document.getElementById("tbl2").style.visibility = "visible";
             var table = document.getElementById("tbl2");
             var row = table.insertRow();
-            for (var i in response) {
+            if (response.length < 10){
+                limit = response.length;
+            }
+            var i;
+            for (i = 0; i < limit; i++) {
                 arr.push(["<img height='100' width='100' src=" + response[i].resim + ">", response[i].urun, response[i].fiyat + " TL", "<a href=" + response[i].link + ">Git</a>"])
                 var row = table.insertRow();
                 var cell1 = row.insertCell();
