@@ -1,6 +1,6 @@
 ﻿@model RegisterViewModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Kayıt Ol";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -8,31 +8,31 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-            <h4>Create a new account.</h4>
+            <h4>Yeni bir hesap oluşturun.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Email"></label>
+                <label asp-for="Email">E-posta</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password"></label>
+                <label asp-for="Password">Parola</label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
+                <label asp-for="ConfirmPassword">Parolayı Onaylayın</label>
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ad_Soyad"></label>
+                <label asp-for="Ad_Soyad">Ad Soyad</label>
                 <input asp-for="Ad_Soyad" class="form-control" />
                 <span asp-validation-for="Ad_Soyad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Telefon_No"></label>
+                <label asp-for="Telefon_No">Telefon Numarası</label>
                 <input asp-for="Telefon_No" class="form-control" />
                 <span asp-validation-for="Telefon_No" class="text-danger"></span>
             </div>
@@ -47,12 +47,12 @@
                 <span asp-validation-for="Cinsiyet" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Dogum_Tarihi"></label>
+                <label asp-for="Dogum_Tarihi">Doğum Tarihi</label>
                 <input type="date" asp-for="Dogum_Tarihi" class="form-control" />
                 <span asp-validation-for="Dogum_Tarihi" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ogrenim_Durumu"></label>
+                <label asp-for="Ogrenim_Durumu">Öğrenim Durumu</label>
                 <input asp-for="Ogrenim_Durumu" class="form-control" />
                 <span asp-validation-for="Ogrenim_Durumu" class="text-danger"></span>
             </div>
@@ -62,11 +62,11 @@
                 <span asp-validation-for="Meslek" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Medeni_Durum"></label>
+                <label asp-for="Medeni_Durum">Medeni Durum</label>
                 <input asp-for="Medeni_Durum" class="form-control" />
                 <span asp-validation-for="Medeni_Durum" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-default">Register</button>
+            <button type="submit" class="btn btn-default">Kayıt Ol</button>
         </form>
     </div>
 </div>
