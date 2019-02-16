@@ -117,7 +117,7 @@ function fav_urun_ekle(ad, fiyat, link, resim) {
         url: "Istek/Urun_Ekle",
         data: { "resim": resim, "urun_adi": ad, "fiyat": fiyat, "url": link },
         success: function (response) {
-            document.getElementById("demo").innerHTML = "Eklendi";
+            alert("Ürün Favorilere Eklendi.")
         },
         error: function (xhr) {
             document.getElementById("demo").innerHTML = "Error";
