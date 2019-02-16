@@ -86,7 +86,7 @@ function post_func2() {
                 var cell4 = row.insertCell();
                 var cell5 = row.insertCell();
                 cell1.innerHTML = "<img height='100' width='100' src=" + response[i].resim + " >";
-                cell2.innerHTML = response[i].urun;
+                cell2.innerHTML = response[i].urun + "  ";
                 cell3.innerHTML = response[i].fiyat;
                 var yazi = `<button onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
                 cell4.innerHTML = yazi;
