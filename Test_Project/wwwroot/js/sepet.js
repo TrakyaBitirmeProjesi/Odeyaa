@@ -1,10 +1,11 @@
 ﻿var urun_dizisi = [];
 class Urun {
-    constructor(fotograf, link, fiyat, isim) {
+    constructor(fotograf, link, fiyat, isim,id) {
         this.fotograf = fotograf;
         this.link = link;
         this.fiyat = fiyat;
         this.isim = isim;
+        this.id = id;
     }
 }
 
@@ -16,6 +17,18 @@ function urun_sil(id) {
             alert("Ürününüz Silindi");
             $("#tbl2").empty();
             post_func2();
+        },
+        error: function (xhr) {
+            document.getElementById("demo").innerHTML = "Error";
+        }
+    });
+}
+
+function urun_sil_siparis(id) {
+    $.ajax({
+        url: "sepet/Urun_Sil",
+        data: { "Id": id },
+        success: function (response) {
         },
         error: function (xhr) {
             document.getElementById("demo").innerHTML = "Error";
@@ -41,9 +54,8 @@ function post_func2() {
                 alert("Sepetinizde Ürün yok");
                 document.getElementById("sepetyazi").innerHTML = "Sepetinizde Ürününüz Yok";
                 document.getElementById("toplam_fiyat").innerHTML = "";
-                document.getElementById("siparisbtn").style.visibility = "hidden";
             } else {
-                document.getElementById("tbl2").style.visibility = "visible";
+                document.getElementById("sepet_icerik").style.visibility = "visible";
                 var table = document.getElementById("tbl2");
                 var row = table.insertRow();
                 var toplam_fiyat = 0;
@@ -61,7 +73,7 @@ function post_func2() {
                     cell4.innerHTML = `<button type="button" class="btn btn-primary" onclick = "goLink('${response[i].urun_Linki}')">Git</button>` + "&nbsp";  
                     cell5.innerHTML = `<button type="button" class="btn btn-danger" onclick = "urun_sil('${response[i].id}')">Ürünü Sil</button>`;
                     toplam_fiyat = toplam_fiyat + response[i].urun_Fiyati
-                    var urun = new Urun(response[i].urun_Fotograf, response[i].urun_Linki, response[i].urun_Fiyati, response[i].urun_Adi);
+                    var urun = new Urun(response[i].urun_Fotograf, response[i].urun_Linki, response[i].urun_Fiyati, response[i].urun_Adi, response[i].id);
                     urun_dizisi.push(urun);
                 }
                 if (response == "") {
@@ -100,19 +112,21 @@ function siparis_olustur() {
                     xhrFields:{
                         withCredentials: false
                     },
-                    success: function (response) {
-                        console.log(response)
+                    success: function (response) {                       
                     },
                     error: function (xhr) {
                         document.getElementById("demo").innerHTML = "Error";
                     }
                 });
+                urun_sil_siparis(urun_dizisi[i].id)
             }
+            alert("Sipariş Oluşturuldu.");
+            location.href = "Siparisler/Detay?id=" + response;
         },
         error: function (xhr) {
             document.getElementById("demo").innerHTML = "Error";
         }
     });
-
+    
 }
 

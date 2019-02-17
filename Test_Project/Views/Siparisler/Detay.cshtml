@@ -3,9 +3,21 @@
     ViewData["Title"] = "Detay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body onload="deneme();">
+<body onload="post_func2();">
     <center>
-        <h2 style="padding-top:20px;">Detay</h2>
+        <h2 style="padding-top:20px;"> Sipariş Detayları </h2>
+        <hr />
         <p id="denem"></p>
+        <table id="tbl2" style="visibility:hidden;">
+            <tr>
+                <th>Ürün Resmi</th>
+                <th>Ürün Adı</th>
+                <th>Fiyat&nbsp </th>
+                <th>&nbsp Link</th>
+                <th>&nbsp&nbsp</th>
+            </tr>
+            <tr></tr>
+        </table>
+        <p id="fiyat"></p>
     </center>
 </body>

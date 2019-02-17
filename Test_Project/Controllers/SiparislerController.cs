@@ -37,5 +37,10 @@ namespace Test_Project.Controllers
         {
             return View();
         }
+        public JsonResult detay_siparis(int id)
+        {
+            var siparis = _ctx.SiparisUrunler.Where(a => a.SiparisId == id).Select(s => new SiparisUrunlerViewModel() { Urun_Adi = s.Urun_Adi, Urun_Fiyati = s.Urun_Fiyati, Urun_Fotograf = s.Urun_Fotograf, Urun_Linki = s.Urun_Linki, Id = s.Id }).ToList();
+            return Json(siparis);
+        }
     }
 }
