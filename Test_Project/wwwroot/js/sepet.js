@@ -13,6 +13,11 @@
     });
 };
 
+function goLink(link) {
+    //location.href = link;
+    window.open(link)
+}
+
 function post_func2() {
     var arr = [];
     $.ajax({
@@ -43,7 +48,7 @@ function post_func2() {
                     cell1.innerHTML = "<img height='100' width='100' src=" + response[i].urun_Fotograf + " >" + "&nbsp";
                     cell2.innerHTML = response[i].urun_Adi + "&nbsp";
                     cell3.innerHTML = response[i].urun_Fiyati + "&nbsp&nbspTL " + "&nbsp";
-                    cell4.innerHTML = `<button type="button" class="btn btn-primary"><a href=" + '${response[i].urun_Linki}' + "></a>Git</button>` + "&nbsp";
+                    cell4.innerHTML = `<button type="button" class="btn btn-primary" onclick = "goLink('${response[i].urun_Linki}')">Git</button>` + "&nbsp";  
                     cell5.innerHTML = `<button type="button" class="btn btn-danger" onclick = "urun_sil('${response[i].id}')">Ürünü Sil</button>`;
                     toplam_fiyat = toplam_fiyat + response[i].urun_Fiyati
 

@@ -41,9 +41,9 @@ function post_func() {
                 cell1.innerHTML = "<img height='100' width='100' src=" + response[i].resim + " >";
                 cell2.innerHTML = response[i].urun;
                 cell3.innerHTML = response[i].fiyat;
-                var yazi = `<button onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
+                var yazi = `<button type="button" class="btn btn-success" onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
                 cell4.innerHTML = yazi;
-                cell5.innerHTML = `<button onclick = "fav_urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Favorilere Ekle</button>`;
+                cell5.innerHTML = `<button type="button" class="btn btn-light"  onclick = "fav_urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Favorilere Ekle</button>`;
 
                 //"<a href='/Sepet/urun_ekle?url=" + response[i].link + "&fiyat=" + response[i].fiyat + "&resim=" + response[i].resim + "&urun_adi=" + response[i].urun + "'>Git</a>";
 
@@ -88,9 +88,9 @@ function post_func2() {
                 cell1.innerHTML = "<img height='100' width='100' src=" + response[i].resim + " >";
                 cell2.innerHTML = response[i].urun + "  ";
                 cell3.innerHTML = response[i].fiyat;
-                var yazi = `<button onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
+                var yazi = `<button type="button" class="btn btn-success" onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
                 cell4.innerHTML = yazi;
-                cell5.innerHTML = `<button onclick = "fav_urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Favorilere Ekle</button>`;
+                cell5.innerHTML = `<button type="button" class="btn btn-light" onclick = "fav_urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Favorilere Ekle</button>`;
 
             }
 
