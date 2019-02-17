@@ -55,5 +55,31 @@ namespace Test_Project.Controllers
             _ctx.SaveChanges();
             return Json("true");
         }
+        [Authorize]
+        public JsonResult Siparis_Olustur(float fiyat)
+        {
+            ApplicationUser user = _usermanager.FindByNameAsync(HttpContext.User.Identity.Name).Result;
+            var Siparis = new Siparis();
+            Siparis.Tarih = DateTime.Now.Date;
+            Siparis.user = user;
+            Siparis.Toplam_Fiyat = fiyat;
+            _ctx.Siparis.Add(Siparis);
+            _ctx.SaveChanges();
+            return Json(Siparis.Id);
+        }
+
+        [Authorize]
+        public JsonResult Siparis_Urun_Ekle(string resim, string urun_adi, float fiyat, string url,int siparisId)
+        {
+            var SiparisUrun = new SiparisUrunler();
+            SiparisUrun.Urun_Adi = urun_adi;
+            SiparisUrun.Urun_Fiyati = fiyat;
+            SiparisUrun.Urun_Linki = url;
+            SiparisUrun.Urun_Fotograf = resim;
+            SiparisUrun.SiparisId = siparisId;
+            _ctx.SiparisUrunler.Add(SiparisUrun);
+            _ctx.SaveChanges();
+            return Json("true");
+        }
     }
 }

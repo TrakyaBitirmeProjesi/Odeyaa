@@ -1,4 +1,14 @@
-﻿function urun_sil(id) {
+﻿var urun_dizisi = [];
+class Urun {
+    constructor(fotograf, link, fiyat, isim) {
+        this.fotograf = fotograf;
+        this.link = link;
+        this.fiyat = fiyat;
+        this.isim = isim;
+    }
+}
+
+function urun_sil(id) {
     $.ajax({
         url: "sepet/Urun_Sil",
         data: { "Id": id },
@@ -11,7 +21,7 @@
             document.getElementById("demo").innerHTML = "Error";
         }
     });
-};
+}
 
 function goLink(link) {
     //location.href = link;
@@ -51,7 +61,8 @@ function post_func2() {
                     cell4.innerHTML = `<button type="button" class="btn btn-primary" onclick = "goLink('${response[i].urun_Linki}')">Git</button>` + "&nbsp";  
                     cell5.innerHTML = `<button type="button" class="btn btn-danger" onclick = "urun_sil('${response[i].id}')">Ürünü Sil</button>`;
                     toplam_fiyat = toplam_fiyat + response[i].urun_Fiyati
-
+                    var urun = new Urun(response[i].urun_Fotograf, response[i].urun_Linki, response[i].urun_Fiyati, response[i].urun_Adi);
+                    urun_dizisi.push(urun);
                 }
                 if (response == "") {
                     document.getElementById("toplam_fiyat").innerHTML = "YOK";
@@ -67,3 +78,41 @@ function post_func2() {
         }
     });
 }
+
+function siparis_olustur() {
+    var fiyat = 0;
+    for (var i in urun_dizisi) {
+        fiyat = fiyat + urun_dizisi[i].fiyat;
+    }
+    $.ajax({
+        url: "/Sepet/Siparis_Olustur",
+        data: { "fiyat": fiyat },
+        xhrFields: {
+            withCredentials: false
+        },
+        success: function (response) {
+            console.log(response)
+            for (var i in urun_dizisi) {
+                $.ajax({
+                    url: "/Sepet/Siparis_Urun_Ekle",
+                    data: {
+                        "resim": urun_dizisi[i].fotograf, "urun_adi": urun_dizisi[i].isim, "fiyat": urun_dizisi[i].fiyat, "url": urun_dizisi[i].link, "siparisId": response},
+                    xhrFields:{
+                        withCredentials: false
+                    },
+                    success: function (response) {
+                        console.log(response)
+                    },
+                    error: function (xhr) {
+                        document.getElementById("demo").innerHTML = "Error";
+                    }
+                });
+            }
+        },
+        error: function (xhr) {
+            document.getElementById("demo").innerHTML = "Error";
+        }
+    });
+
+}
+

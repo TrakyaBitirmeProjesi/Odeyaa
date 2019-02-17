@@ -8,7 +8,7 @@ namespace Test_Project.Models
     public class SiparisUrunler
     {
         public int Id { get; set; }
-        public Siparis SiparisId { get; set; }
+        public int SiparisId { get; set; }
         public string Urun_Adi { get; set; }
         public float Urun_Fiyati { get; set; }
         public string Urun_Linki { get; set; }
