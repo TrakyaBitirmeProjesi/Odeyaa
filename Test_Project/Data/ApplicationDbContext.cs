@@ -26,5 +26,6 @@ namespace Test_Project.Data
         public DbSet<Favoriler> Favoriler { get; set; }
         public DbSet<Istek> Sepet { get; set; }
         public DbSet<Siparis> Siparis { get; set; }
+        public DbSet<SiparisUrunler> SiparisUrunler { get; set; }
     }
 }

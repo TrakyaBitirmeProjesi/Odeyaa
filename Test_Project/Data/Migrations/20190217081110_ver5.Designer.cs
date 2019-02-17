@@ -11,9 +11,10 @@ using Test_Project.Data;
 namespace Test_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190217081110_ver5")]
+    partial class ver5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,28 +278,6 @@ namespace Test_Project.Data.Migrations
                     b.ToTable("Siparis");
                 });
 
-            modelBuilder.Entity("Test_Project.Models.SiparisUrunler", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("SiparisIdId");
-
-                    b.Property<string>("Urun_Adi");
-
-                    b.Property<float>("Urun_Fiyati");
-
-                    b.Property<string>("Urun_Fotograf");
-
-                    b.Property<string>("Urun_Linki");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SiparisIdId");
-
-                    b.ToTable("SiparisUrunler");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -370,13 +349,6 @@ namespace Test_Project.Data.Migrations
                     b.HasOne("Test_Project.Models.ApplicationUser", "user")
                         .WithMany()
                         .HasForeignKey("userId");
-                });
-
-            modelBuilder.Entity("Test_Project.Models.SiparisUrunler", b =>
-                {
-                    b.HasOne("Test_Project.Models.Siparis", "SiparisId")
-                        .WithMany()
-                        .HasForeignKey("SiparisIdId");
                 });
 #pragma warning restore 612, 618
         }

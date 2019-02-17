@@ -72,9 +72,9 @@ function post_function() {
                     cell1.innerHTML = "<img height='100' width='100' src=" + response[i].urun_Fotograf + " >";
                     cell2.innerHTML = "&nbsp&nbsp" +response[i].urun_Adi + "&nbsp&nbsp";
                     cell3.innerHTML = response[i].urun_Fiyati + "&nbspTL&nbsp&nbsp ";
-                    cell4.innerHTML = "<a href=" + response[i].urun_Linki + ">Git&nbsp&nbsp</a>";
-                    cell5.innerHTML = `<button onclick = "urun_sil('${response[i].id}')">Ürünü Sil&nbsp&nbsp</button>` +"&nbsp";
-                    cell6.innerHTML = `<button onclick = "urun_ekle('${response[i].id}','${response[i].urun_Adi}','${response[i].urun_Fiyati}','${response[i].urun_Linki}','${response[i].urun_Fotograf}')">Sepete Ekle</button>`;
+                    cell4.innerHTML = `<button type="button" class="btn btn-primary"><a href=" + response[i].urun_Linki + "></a>Git</button>` + "&nbsp";
+                    cell5.innerHTML = `<button type="button" class="btn btn-danger" onclick = "urun_sil('${response[i].id}')">Ürünü Sil</button>` +"&nbsp";
+                    cell6.innerHTML = `<button type="button" class="btn btn-success" onclick = "urun_ekle('${response[i].id}','${response[i].urun_Adi}','${response[i].urun_Fiyati}','${response[i].urun_Linki}','${response[i].urun_Fotograf}')">Sepete Ekle</button>`;
                     toplam_fiyat = toplam_fiyat + response[i].urun_Fiyati
 
                 }

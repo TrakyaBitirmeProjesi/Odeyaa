@@ -26,6 +26,7 @@ function post_func2() {
                 alert("Sepetinizde Ürün yok");
                 document.getElementById("sepetyazi").innerHTML = "Sepetinizde Ürününüz Yok";
                 document.getElementById("toplam_fiyat").innerHTML = "";
+                document.getElementById("siparisbtn").style.visibility = "hidden";
             } else {
                 document.getElementById("tbl2").style.visibility = "visible";
                 var table = document.getElementById("tbl2");
@@ -39,11 +40,11 @@ function post_func2() {
                     var cell3 = row.insertCell();
                     var cell4 = row.insertCell();
                     var cell5 = row.insertCell();
-                    cell1.innerHTML = "<img height='100' width='100' src=" + response[i].urun_Fotograf + " >";
-                    cell2.innerHTML = response[i].urun_Adi;
-                    cell3.innerHTML = response[i].urun_Fiyati + "&nbsp&nbspTL ";
-                    cell4.innerHTML = "<a href=" + response[i].urun_Linki + ">Git</a>";
-                    cell5.innerHTML = `<button onclick = "urun_sil('${response[i].id}')">Ürünü Sil</button>`;
+                    cell1.innerHTML = "<img height='100' width='100' src=" + response[i].urun_Fotograf + " >" + "&nbsp";
+                    cell2.innerHTML = response[i].urun_Adi + "&nbsp";
+                    cell3.innerHTML = response[i].urun_Fiyati + "&nbsp&nbspTL " + "&nbsp";
+                    cell4.innerHTML = `<button type="button" class="btn btn-primary"><a href=" + '${response[i].urun_Linki}' + "></a>Git</button>` + "&nbsp";
+                    cell5.innerHTML = `<button type="button" class="btn btn-danger" onclick = "urun_sil('${response[i].id}')">Ürünü Sil</button>`;
                     toplam_fiyat = toplam_fiyat + response[i].urun_Fiyati
 
                 }
