@@ -118,7 +118,10 @@ function siparis_olustur() {
                         document.getElementById("demo").innerHTML = "Error";
                     }
                 });
-                urun_sil_siparis(urun_dizisi[i].id)
+                
+            }
+            for (var i in urun_dizisi) {
+                urun_sil_siparis(urun_dizisi[i].id);
             }
             alert("Sipariş Oluşturuldu.");
             location.href = "Siparisler/Detay?id=" + response;
