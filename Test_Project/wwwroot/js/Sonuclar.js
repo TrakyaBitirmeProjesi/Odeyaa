@@ -7,7 +7,7 @@
     }
     return (false);
 }
-function post_func() {
+function migros_sonuclar() {
     var arr = [];
     var product = getQueryVariable("arama")
     $.ajax({
@@ -54,7 +54,7 @@ function post_func() {
         }
     });
 }
-function post_func2() {
+function carrefoursa_sonuclar() {
     var arr = [];
     var product = getQueryVariable("arama")
     $.ajax({
@@ -138,9 +138,8 @@ function aranan_urun_ekle(ad, fiyat, link, resim) {
     });
 };
 
-function deneme() {
-    var aranan = getQueryVariable("arama");
-    post_func();
-    post_func2();
+function sonuc_yukle() {
+    migros_sonuclar();
+    carrefoursa_sonuclar();
 }
 

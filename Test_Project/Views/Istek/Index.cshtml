@@ -4,12 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body onload="post_function()">
+<body onload="favorileri_yukle()">
     <center>
         <h2 style="padding-top:20px;"><p id="istekyazi"></p></h2>
         <p id="demo"></p>
         <div id="sepet_icerik" class="table-responsive" style="visibility:hidden;">
-            <table id="tbl2" style="visibility:hidden;" class="table">
+            <table id="favori_tbl" style="visibility:hidden;" class="table">
                 <caption style=" display: table-caption;text-align: center;"><h2>Favori Ürünleriniz</h2></caption>
                 <thead>
                     <tr>
@@ -24,8 +24,8 @@
                     <tr></tr>
                 </tbody>
             </table>
-        </div>
             <p id="toplam_fiyat"></p>
+        </div>
     </center>
 </body>
 

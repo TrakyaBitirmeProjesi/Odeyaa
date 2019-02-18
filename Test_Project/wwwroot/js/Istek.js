@@ -47,7 +47,7 @@ function goLink(link) {
 }
 
 
-function post_function() {
+function favorileri_yukle() {
     var arr = [];
     $.ajax({
         url: "/Istek/fav_urun_goster",
@@ -61,8 +61,8 @@ function post_function() {
                 document.getElementById("istekyazi").innerHTML = "Favori Ürününüz Yok";
                 document.getElementById("toplam_fiyat").innerHTML = "";
             } else {
-                document.getElementById("tbl2").style.visibility = "visible";
-                var table = document.getElementById("tbl2");
+                document.getElementById("favori_tbl").style.visibility = "visible";
+                var table = document.getElementById("favori_tbl");
                 var row = table.insertRow();
                 var toplam_fiyat = 0;
                 for (var i in response) {
