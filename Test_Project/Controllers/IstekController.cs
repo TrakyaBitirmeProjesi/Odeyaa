@@ -51,6 +51,7 @@ namespace Test_Project.Controllers
             var Istek = _ctx.Favoriler.Where(a => a.user.Id == user.Id).Select(s => new FavorilerViewModel() { Urun_Adi = s.Urun_Adi, Urun_Fiyati = s.Urun_Fiyati, Urun_Fotograf = s.Urun_Fotograf, Urun_Linki = s.Urun_Linki, Id = s.Id }).ToList();
             return Json(Istek);
         }
+        [Authorize]
         public IActionResult Index()
         {
             return View();

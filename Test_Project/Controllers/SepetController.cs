@@ -41,7 +41,7 @@ namespace Test_Project.Controllers
             var sepet = _ctx.Sepet.Where(a => a.user.Id == user.Id).Select(s => new SepetViewModel() { Urun_Adi = s.Urun_Adi, Urun_Fiyati = s.Urun_Fiyati, Urun_Fotograf = s.Urun_Fotograf, Urun_Linki = s.Urun_Linki, Id = s.Id }).ToList();
             return Json(sepet);
         }
-        //[Authorize]
+        [Authorize]
         public IActionResult Index()
         {
             return View();

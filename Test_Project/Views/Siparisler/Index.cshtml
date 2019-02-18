@@ -3,16 +3,22 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body onload="post_func2()">
+<body onload="siparis_yukle()">
     <center>
-        <h2 style="padding-top:20px;">Siparişler Gözükecek</h2>
-        <table class="table" id="tbl2" style="visibility:hidden;">
-            <tr>
-                <th scope="col">Tarih</th>
-                <th scope="col">Fiyat</th>
-                <th scope="col">Detay </th>
-            </tr>
-            <tr></tr>
-        </table>
+        <div style="margin-top:2%" class="table-responsive" >
+            <table class="table" id="siparisler_tbl" style="visibility:hidden;">
+                <caption style=" display: table-caption;text-align: center;"><h2>Siparişleriniz</h2></caption>
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Fiyat</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+            </div>
     </center>
 </body>

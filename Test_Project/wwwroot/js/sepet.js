@@ -79,7 +79,7 @@ function post_func2() {
                 if (response == "") {
                     document.getElementById("toplam_fiyat").innerHTML = "YOK";
                  } else {
-                    document.getElementById("toplam_fiyat").innerHTML = "Sepetinizdeki Ürünleri Fiyatı = " + toplam_fiyat + "TL";
+                    document.getElementById("toplam_fiyat").innerHTML = "<h4>Sepetinizdeki Ürünleri Fiyatı = " + toplam_fiyat + "TL</h4>";
 }
                 
             }

@@ -3,21 +3,30 @@
     ViewData["Title"] = "Detay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body onload="post_func2();">
+<body onload="detay_yukle();">
     <center>
-        <h2 style="padding-top:20px;"> Sipariş Detayları </h2>
-        <hr />
         <p id="denem"></p>
-        <table id="tbl2" style="visibility:hidden;">
-            <tr>
-                <th>Ürün Resmi</th>
-                <th>Ürün Adı</th>
-                <th>Fiyat&nbsp </th>
-                <th>&nbsp Link</th>
-                <th>&nbsp&nbsp</th>
-            </tr>
-            <tr></tr>
+        <table id="detay_tablo" style="visibility:hidden;" class="table">
+            <caption style=" display: table-caption;text-align: center;"><h2>Sipariş Detayları</h2></caption>
+
+            <thead>
+                <tr>
+                    <th>Ürün Resmi</th>
+                    <th>Ürün Adı</th>
+                    <th>Fiyat&nbsp </th>
+                    <th>&nbsp Link</th>
+                    <th>&nbsp&nbsp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
         </table>
-        <p id="fiyat"></p>
+        <hr />
+        <div class="card">
+            <div class="card-body">
+                <p id="fiyat"></p>
+               </div>
+        </div>
     </center>
 </body>

@@ -8,19 +8,28 @@
     <center>
         <h2 style="padding-top:20px;"><p id="sepetyazi"></p></h2>
         <p id="demo"></p>
-        <div id = "sepet_icerik" style="visibility:hidden;">
-            <table id="tbl2" >
-                <tr>
-                    <th>Ürün Resmi</th>
-                    <th>Ürün Adı</th>
-                    <th>Fiyat&nbsp </th>
-                    <th>&nbsp Link</th>
-                    <th>&nbsp&nbsp</th>
-                </tr>
-                <tr></tr>
+        <div id="sepet_icerik" class="table-responsive" style="visibility:hidden;">
+            <table id="tbl2" class="table">
+                <caption style=" display: table-caption;text-align: center;"><h2>Sepetinizdeki Ürünler</h2></caption>
+                <thead>
+                    <tr>
+                        <th>Ürün Resmi</th>
+                        <th>Ürün Adı</th>
+                        <th>Fiyat&nbsp </th>
+                        <th>&nbsp</th>
+                        <th>&nbsp&nbsp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                <tbody>
             </table>
-            <p id="toplam_fiyat"></p>
-            <button type="button" class="btn btn-success" id="siparisbtn" onclick="siparis_olustur()">Sipariş Ver</button>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text" id="toplam_fiyat"></p><br />
+                    <button style="width:125px;height:40px;" type="button" class="btn btn-success" id="siparisbtn" onclick="siparis_olustur()">Satın Al</button>
+                </div>
+            </div>
         </div>
         </center>
 </body>

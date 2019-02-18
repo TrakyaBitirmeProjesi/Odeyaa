@@ -8,11 +8,13 @@
     return (false);
 }
 
-function deneme() {
-    //document.getElementById("denem").innerHTML = getQueryVariable("id") + "Li detay gösterilecek";
+function goLink(link) {
+    //location.href = link;
+    window.open(link)
 }
 
-function post_func2() {
+
+function detay_yukle() {
     var arr = [];
     var toplam_fiyat = 0;
     $.ajax({
@@ -23,8 +25,8 @@ function post_func2() {
         },
         success: function (response) {
             console.log(response);
-                document.getElementById("tbl2").style.visibility = "visible";
-                var table = document.getElementById("tbl2");
+            document.getElementById("detay_tablo").style.visibility = "visible";
+            var table = document.getElementById("detay_tablo");
                 var row = table.insertRow();
                 var toplam_fiyat = 0;
                 for (var i in response) {
