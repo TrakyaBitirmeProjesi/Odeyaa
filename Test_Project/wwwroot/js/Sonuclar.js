@@ -40,7 +40,7 @@ function migros_sonuclar() {
                 var cell5 = row.insertCell();
                 cell1.innerHTML = "<img height='100' width='100' src=" + response[i].resim + " >";
                 cell2.innerHTML = response[i].urun;
-                cell3.innerHTML = response[i].fiyat;
+                cell3.innerHTML = response[i].fiyat + " TL";
                 var yazi = `<button type="button" class="btn btn-success" onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
                 cell4.innerHTML = yazi;
                 cell5.innerHTML = `<button type="button" class="btn btn-light"  onclick = "fav_urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Favorilere Ekle</button>`;
@@ -87,7 +87,7 @@ function carrefoursa_sonuclar() {
                 var cell5 = row.insertCell();
                 cell1.innerHTML = "<img height='100' width='100' src=" + response[i].resim + " >";
                 cell2.innerHTML = response[i].urun + "  ";
-                cell3.innerHTML = response[i].fiyat;
+                cell3.innerHTML = response[i].fiyat + " TL";
                 var yazi = `<button type="button" class="btn btn-success" onclick = "urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Sepete Ekle</button>`;
                 cell4.innerHTML = yazi;
                 cell5.innerHTML = `<button type="button" class="btn btn-light" onclick = "fav_urun_ekle('${response[i].urun}','${response[i].fiyat}','${response[i].link}','${response[i].resim}')">Favorilere Ekle</button>`;

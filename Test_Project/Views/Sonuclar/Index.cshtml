@@ -4,28 +4,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body onload="sonuc_yukle()">
-    
+
     <center><h2 style="padding-top:20px;">Arama Sonuçları</h2></center>
-    <br /><br /><br />
-    <table id="tbl1" style="width:45% ; display: inline-block;float: left;visibility:hidden;">
-        <caption>Migros Sonuçları</caption>
+    <br /><br />
+    <div class="col-xs-6">
+        <table class="table" id="tbl1" style="width:45% ; display: inline-block;float: left;visibility:hidden;">
+        <caption >Migros Sonuçları</caption>
         <tr>
-            <th>Ürün Resmi</th>
-            <th>Ürün Adı</th>
-            <th>Fiyat</th>
-            <th>Link</th>
+        <th>Ürün Resmi</th>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th> </th>
+        <th> </th>
         </tr>
         <tr></tr>
+        </table>
+    </div>
+    <table class="table" id="tbl2" style="width:45% ; display: inline-block ;float:right;visibility:hidden;">
+    <caption>Carrefoursa Sonuçları</caption>
+    <tr>
+    <th>Ürün Resmi</th>
+    <th>Ürün Adı</th>
+    <th>Fiyat</th>
+    <th></th>
+    <th> </th>
+    </tr>
+    <tr></tr>
     </table>
 
-    <table id="tbl2" style="width:45% ; display: inline-block ;float:right;visibility:hidden;">
-        <caption>Carrefoursa Sonuçları</caption>
-        <tr>
-            <th>Ürün Resmi</th>
-            <th>Ürün Adı</th>
-            <th>Fiyat</th>
-            <th>Link</th>
-        </tr>
-        <tr></tr>
-    </table>
 </body>
