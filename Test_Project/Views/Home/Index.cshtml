@@ -2,25 +2,93 @@
     ViewData["Title"] = "Home Page";
 }
 
-<br /><br /><br />
-<table id="tbl1" style="width:45% ; display: inline-block;float: left;visibility:hidden;">
-    <caption>Migros Sonuçları</caption>
-    <tr>
-        <th>Ürün Resmi</th>
-        <th>Ürün Adı</th>
-        <th>Fiyat</th>
-        <th>Link</th>
-    </tr>
-    <tr></tr>
-</table>
 
-<table id="tbl2" style="width:45% ; display: inline-block ;float:right;visibility:hidden;">
-    <caption>Carrefoursa Sonuçları</caption>
-    <tr>
-        <th>Ürün Resmi</th>
-        <th>Ürün Adı</th>
-        <th>Fiyat</th>
-        <th>Link</th>
-    </tr>
-    <tr></tr>
-</table>
+<div class="container body-content">
+
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+
+        <ol class="carousel-indicators">
+
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+
+        <div class="carousel-inner">
+
+            <!-- 1nci slide için başlangıç -->
+
+            <div class="item active">
+
+                <img style="margin:auto;" src="~/img/market3.jpg" alt="image01">
+
+                <div class="carousel-caption">
+
+                    Buraya image01 için metin yazabilirsiniz. HTML
+
+                </div>
+
+            </div>
+
+            <!-- // 1nci slide için bitiş -->
+            <!-- 2nci slide için başlangıç -->
+
+            <div class="item">
+
+                <img style="margin:auto" src="~/img/market1.jpg" alt="image02">
+
+                <div class="carousel-caption">
+
+                    Buraya image02 için metin yazabilirsiniz. HTML
+
+                </div>
+
+            </div>
+
+            <!-- // 2nci slide için bitiş -->
+            <!-- 3ncü slide için başlangıç -->
+
+            <div class="item">
+
+                <img style="margin:auto" src="~/img/market2.jpg" alt="image03">
+
+                <div class="carousel-caption">
+
+                    Buraya image03 için metin yazabilirsiniz. HTML
+
+                </div>
+
+            </div>
+
+            <!-- // 3ncü slide için bitiş -->
+
+        </div>
+
+        <!-- Controls -->
+
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+
+            <span class="glyphicon glyphicon-chevron-left"></span>
+
+        </a>
+
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+
+            <span class="glyphicon glyphicon-chevron-right"></span>
+
+        </a>
+
+    </div>
+
+
+
+</div>
+
