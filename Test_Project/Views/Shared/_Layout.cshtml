@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <script src="~/js/home.js" asp-append-version="true"></script>
     <script src="~/js/jquery.min.js" asp-append-version="true"></script>
     <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
@@ -20,25 +21,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Test_Project</title>
 
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+   <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
+
     <environment include="Development">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-        <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
 
         <link type="text/css" rel="stylesheet" href="~/css/slick.css" />
         <link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
 
 
+
         <link type="text/css" rel="stylesheet" href="~/css/nouislider.min.css" />
 
         <link rel="stylesheet" href="~/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/css/style.css" />
 
 
         <link type="text/css" rel="stylesheet" href="~/css/style.css" />
         <link href="~/css/shop-homepage.css" rel="stylesheet">
 
 
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -65,6 +69,7 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
     </environment>
 
 
@@ -213,164 +218,249 @@ else
     </nav>
     <br /><br /><br /><br /><br /><br />
 
+                                  <div class="container body-content">
+                                      @RenderBody()
 
+                                      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-    <div class="container body-content">
-        @RenderBody()
-    </div>
+                                          <!-- Indicators -->
 
+                                          <ol class="carousel-indicators">
 
-        <div id="newsletter" class="section">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="newsletter">
-                            <p>İndirimleri kaçırmayın,biz size haber verelim!</p>
-                            <form>
-                                <input class="input" type="email" placeholder="E-postanızı giriniz...">
-                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> Abone Ol</button>
-                            </form>
-                            <ul class="newsletter-follow">
-                                <li>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </li>
+                                              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+
+                                              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+
+                                              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+                                          </ol>
+
+                                          <!-- Wrapper for slides -->
+
+                                          <div class="carousel-inner">
+
+                                              <!-- 1nci slide için başlangıç -->
+
+                                              <div class="item active">
+
+                                                  <img style="margin:auto" src="~/img/market3.jpg" alt="image01">
+
+                                                  <div class="carousel-caption">
+
+                                                      Buraya image01 için metin yazabilirsiniz. HTML
+
+                                                  </div>
+
+                                              </div>
+
+                                              <!-- // 1nci slide için bitiş -->
+                                              <!-- 2nci slide için başlangıç -->
+
+                                              <div class="item">
+
+                                                  <img style="margin:auto" src="~/img/market1.jpg" alt="image02">
+
+                                                  <div class="carousel-caption">
+
+                                                      Buraya image02 için metin yazabilirsiniz. HTML
+
+                                                  </div>
+
+                                              </div>
+
+                                              <!-- // 2nci slide için bitiş -->
+                                              <!-- 3ncü slide için başlangıç -->
+
+                                              <div class="item">
+
+                                                  <img style="margin:auto" src="~/img/market2.jpg" alt="image03">
+
+                                                  <div class="carousel-caption">
+
+                                                      Buraya image03 için metin yazabilirsiniz. HTML
+
+                                                  </div>
+
+                                              </div>
+
+                                              <!-- // 3ncü slide için bitiş -->
+
+                                          </div>
+
+                                          <!-- Controls -->
+
+                                          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+
+                                              <span class="glyphicon glyphicon-chevron-left"></span>
+
+                                          </a>
+
+                                          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+
+                                              <span class="glyphicon glyphicon-chevron-right"></span>
+
+                                          </a>
+
+                                      </div>
+
+                                      
+
+                                  </div>
+
+                            
+                                      <div id="newsletter" class="section">
+                                          <!-- container -->
+                                          <div class="container">
+                                              <!-- row -->
+                                              <div class="row">
+                                                  <div class="col-md-12">
+                                                      <div class="newsletter">
+                                                          <p>İndirimleri kaçırmayın,biz size haber verelim!</p>
+                                                          <form>
+                                                              <input class="input" type="email" placeholder="E-postanızı giriniz...">
+                                                              <button class="newsletter-btn"><i class="fa fa-envelope"></i> Abone Ol</button>
+                                                          </form>
+                                                          <ul class="newsletter-follow">
+                                                              <li>
+                                                                  <a href="#"><i class="fa fa-facebook"></i></a>
+                                                              </li>
+                                                              <li>
+                                                                  <a href="#"><i class="fa fa-twitter"></i></a>
+                                                              </li>
+                                                              <li>
+                                                                  <a href="#"><i class="fa fa-instagram"></i></a>
+                                                              </li>
+                                                              <li>
+                                                                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                              </li>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <!-- /row -->
+                                          </div>
+                                          <!-- /container -->
+                                      </div>
+                                      <!-- /NEWSLETTER -->
+                                      <!-- FOOTER -->
+                                      <footer id="footer">
+                                          <!-- top footer -->
+                                          <div class="section">
+                                              <!-- container -->
+                                              <div class="container ">
+                                                  <!-- row -->
+                                                  <div class="row">
+                                                      <div class="container  col-xs-6">
+                                                          <div class="footer">
+                                                              <h3 class="footer-title">HAKKIMIZDA</h3>
+                                                              <p>Aynı ürüne daha fazla ödemeyin,market market ürün aramayın diye biz size en ucuzunu buluyoruz.<br /><i>"altını saklamak değil, kuruşu saklamak hünerdir"</i></p>
+                                                              <!-- <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                            </ul>-->
+                                                          </div>
+                                                      </div>
+
+                                                      <!--<div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Kategoriler</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Hot deals</a></li>
+                                <li><a href="#">Laptops</a></li>
+                                <li><a href="#">Smartphones</a></li>
+                                <li><a href="#">Cameras</a></li>
+                                <li><a href="#">Accessories</a></li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <!-- /row -->
-            </div>
-            <!-- /container -->
-        </div>
-        <!-- /NEWSLETTER -->
-        <!-- FOOTER -->
-        <footer id="footer">
-            <!-- top footer -->
-            <div class="section">
-                <!-- container -->
-                <div class="container ">
-                    <!-- row -->
-                    <div class="row">
-                        <div class="container  col-xs-6">
-                            <div class="footer">
-                                <h3 class="footer-title">HAKKIMIZDA</h3>
-                                <p>Aynı ürüne daha fazla ödemeyin,market market ürün aramayın diye biz size en ucuzunu buluyoruz.<br /><i>"altını saklamak değil, kuruşu saklamak hünerdir"</i></p>
-                                <!-- <ul class="footer-links">
-                <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-                <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
-            </ul>-->
-                            </div>
-                        </div>
+                    </div>-->
+                                                      <!--   <div class="clearfix visible-xs"></div>
 
-                        <!--<div class="col-md-3 col-xs-6">
-        <div class="footer">
-            <h3 class="footer-title">Kategoriler</h3>
-            <ul class="footer-links">
-                <li><a href="#">Hot deals</a></li>
-                <li><a href="#">Laptops</a></li>
-                <li><a href="#">Smartphones</a></li>
-                <li><a href="#">Cameras</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </div>
-    </div>-->
-                        <!--   <div class="clearfix visible-xs"></div>
-
-        <div class="col-md-3 col-xs-6">
-            <div class="footer">
-                <h3 class="footer-title">Information</h3>
-                <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Orders and Returns</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-        </div>-->
-
-                        <div class="col-md-3 col-xs-6">
-                            <div class="align-center pull-right ">
-    <div class="footer">
-
-        <h3 class="footer-title">Servisler</h3>
-        <ul class="footer-links">
-            <li><a href="/Manage/Index">Hesabım</a></li>
-            <li><a href="/Sepet">Sepeti Görüntüle</a></li>
-            <li><a href="/Istek">Favorileri Görüntüle</a></li>
-            <li><a href="/Siparisler">Siparişleri Gör</a></li>
-            <li><a href="#">Yardım</a></li>
-        </ul>
-    </div>
-</div>
-                        </div>
-                    </div>
-    <!-- /row -->
-                            </div>
-                <!-- /container -->
-            </div>
-            <!-- /top footer -->
-            <!-- bottom footer -->
-            <div id="bottom-footer" class="section">
-                <div class="container">
-                    <!-- row -->
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <ul class="footer-payments">
-                                <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                                <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                                <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Information</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Orders and Returns</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
                             </ul>
-                            <span class="copyright">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">BLABLA</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </span>
                         </div>
-                    </div>
-                    <!-- /row -->
-                </div>
-                <!-- /container -->
-            </div>
-            <!-- /bottom footer -->
-        </footer>
+                    </div>-->
+
+                                                      <div class="col-md-3 col-xs-6">
+                                                          <div class="align-center pull-right ">
+                                                              <div class="footer">
+
+                                                                  <h3 class="footer-title">Servisler</h3>
+                                                                  <ul class="footer-links">
+                                                                      <li><a href="/Manage/Index">Hesabım</a></li>
+                                                                      <li><a href="/Sepet">Sepeti Görüntüle</a></li>
+                                                                      <li><a href="/Istek">Favorileri Görüntüle</a></li>
+                                                                      <li><a href="/Siparisler">Siparişleri Gör</a></li>
+                                                                      <li><a href="#">Yardım</a></li>
+                                                                  </ul>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <!-- /row -->
+                                              </div>
+                                              <!-- /container -->
+                                          </div>
+                                          <!-- /top footer -->
+                                          <!-- bottom footer -->
+                                          <div id="bottom-footer" class="section">
+                                              <div class="container">
+                                                  <!-- row -->
+                                                  <div class="row">
+                                                      <div class="col-md-12 text-center">
+                                                          <ul class="footer-payments">
+                                                              <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                                                              <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                                                              <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                                                              <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                                                              <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                                                              <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                                                          </ul>
+                                                          <span class="copyright">
+                                                              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                              Copyright &copy;
+                                                              <script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">BLABLA</a>
+                                                              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                          </span>
+                                                      </div>
+                                                  </div>
+                                                  <!-- /row -->
+                                              </div>
+                                              <!-- /container -->
+                                          </div>
+                                          <!-- /bottom footer -->
+                                      </footer>
 
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-    </environment>
+                                      <environment include="Development">
+                                          <script src="~/lib/jquery/dist/jquery.js"></script>
+                                          <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+                                          <script src="~/js/nouislider.min.js"></script>
+                                       
+                                      </environment>
+                                      <environment exclude="Development">
+                                          <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                                                  asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                                                  asp-fallback-test="window.jQuery"
+                                                  crossorigin="anonymous"
+                                                  integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+                                          </script>
+                                          <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                                                  asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                                                  asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                                                  crossorigin="anonymous"
+                                                  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+                                          </script>
+                                      </environment>
 
-    @RenderSection("Scripts", required: false)
+                                      @RenderSection("Scripts", required: false)
 </body>
 </html>
