@@ -88,17 +88,14 @@
                     <ul class="header-links pull-left">
                         <li><a href="/"><i class="fa fa-map-marker"></i> Ana Sayfa</a></li>
                     </ul>
-
-                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
                         <ul class="header-links pull-right">
                             <li>
-                                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hos Geldiniz @UserManager.GetUserName(User)!</a>
+                                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage"><i class="fa fa-lock" aria-hidden="true"></i>Hos Geldiniz @UserManager.GetUserName(User)!</a>
                             </li>
                             <li>
-                                <button type="submit" class="btn btn-link navbar-btn navbar-link">Cikis Yap</button>
+                                <a href="/Account/Logout">Cikis Yap</a>
                             </li>
                         </ul>
-                    </form>
 
                 }
                 else

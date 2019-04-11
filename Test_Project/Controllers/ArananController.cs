@@ -44,9 +44,13 @@ namespace Test_Project.Controllers
         [Authorize]
         public JsonResult Aranan_Urunleri_Goster()
         {
-            var dneme = "";
             ApplicationUser user = _usermanager.FindByNameAsync(HttpContext.User.Identity.Name).Result;
             var Aranan = _ctx.Arananlar.Where(a => a.user.Id == user.Id).Select(s => new ArananlarViewModel() { Kelime = s.Kelime, Tarih = s.Tarih ,Id =s.Id,user_id = s.user.Id}).ToList();
+            return Json(Aranan);
+        }
+        public JsonResult Son_Aranan_Urunler()
+        {
+            var Aranan = _ctx.Arananlar.Select(s => new ArananlarViewModel() { Kelime = s.Kelime, Tarih = s.Tarih, Id = s.Id, user_id = s.user.Id }).ToList();
             return Json(Aranan);
         }
         public IActionResult Index()
