@@ -143,3 +143,22 @@ function sonuc_yukle() {
     carrefoursa_sonuclar();
 }
 
+function Islogin() {
+    $.ajax({
+        async: "false",
+        url: "/Home/Islogin",
+        data: { "product-name": 1 },
+        success: function (response) {
+            var deneme = response
+            if (deneme === true) {
+                sonuc_yukle();
+            } else {
+                alert("Sonuçları Görebilmek İçin Giriş Yapınız");
+                location.href = "/Account/Login";
+            }
+        },
+        error: function (xhr) {
+            alert("Hata Oluştu");
+        }
+    });
+}

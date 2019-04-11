@@ -27,6 +27,28 @@ function aranan_yukle() {
         }
     });
 }
+
+function tum_arananlar() {
+    var arr = [];
+    var link_arr = [];
+    $.ajax({
+        url: "/Aranan/Son_Aranan_Urunler",
+        data: { "aranan_kelime": "1" },
+        headers: { 'Access-Control-Allow-Origin': 'http://localhost:50532/' },
+        success: function (response) {
+            var i = 0;
+            while (i < response.length) {
+                arr.push(`<a href = "/sonuclar?arama='${response[i].kelime}'"> ${response[i].kelime}  </a>`);
+                i++;
+            }
+            
+            document.getElementById("aranan_kelimeler").innerHTML = "<p>Son Aramalar :  " + arr + "</p>";
+        },
+        error: function (xhr) {
+        }
+    });
+
+}
 function Islogin() {
     $.ajax({
         async: "false",
