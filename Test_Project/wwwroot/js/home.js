@@ -37,7 +37,13 @@ function tum_arananlar() {
         headers: { 'Access-Control-Allow-Origin': 'http://localhost:50532/' },
         success: function (response) {
             var i = 0;
-            while (i < response.length) {
+            var cok = response.length
+            if (response.length > 7) {
+                cok = 7;
+            } else {
+                cok = response.length
+            }
+            while (i < cok) {
                 arr.push(`<a href = "/sonuclar?arama='${response[i].kelime}'"> ${response[i].kelime}  </a>`);
                 i++;
             }
