@@ -37,9 +37,12 @@ function tum_arananlar() {
         headers: { 'Access-Control-Allow-Origin': 'http://localhost:50532/' },
         success: function (response) {
             var i = 0;
-            while (i < response.length) {
-                arr.push(`<a href = "/sonuclar?arama='${response[i].kelime}'"> ${response[i].kelime}  </a>`);
+
+            var d = response.length - 1;
+            for (i = 0; i < 7;i++) {
+                arr.push(`<a href = "/sonuclar?arama='${response[d].kelime}'"> ${response[d].kelime}  </a>`);
                 i++;
+                d--;
             }
             
             document.getElementById("aranan_kelimeler").innerHTML = "<p>Son Aramalar :  " + arr + "</p>";

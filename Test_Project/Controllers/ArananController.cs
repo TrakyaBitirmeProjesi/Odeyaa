@@ -53,6 +53,11 @@ namespace Test_Project.Controllers
             var Aranan = _ctx.Arananlar.Select(s => new ArananlarViewModel() { Kelime = s.Kelime, Tarih = s.Tarih, Id = s.Id, user_id = s.user.Id }).ToList();
             return Json(Aranan);
         }
+        public JsonResult users1()
+        {
+            var Aranan = _ctx.Users.ToList();
+            return Json(Aranan);
+        }
         public IActionResult Index()
         {
             return View();
