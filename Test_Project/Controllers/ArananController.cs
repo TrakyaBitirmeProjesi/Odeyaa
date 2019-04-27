@@ -50,7 +50,7 @@ namespace Test_Project.Controllers
         }
         public JsonResult Son_Aranan_Urunler()
         {
-            var Aranan = _ctx.Arananlar.Select(s => new ArananlarViewModel() { Kelime = s.Kelime, Tarih = s.Tarih, Id = s.Id, user_id = s.user.Id }).ToList();
+            var Aranan = _ctx.Arananlar.Select(s => new ArananlarViewModel() { Kelime = s.Kelime, Tarih = s.Tarih, Id = s.Id, user_email = s.user.Email }).ToList();
             return Json(Aranan);
         }
         public JsonResult users1()

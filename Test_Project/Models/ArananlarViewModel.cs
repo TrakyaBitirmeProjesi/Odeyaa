@@ -12,5 +12,6 @@ namespace Test_Project.Models
         public string Kelime { get; set; }
         public DateTime Tarih { get; set; }
         public string user_id { get; set; }
+        public string user_email { get; set; }
     }
 }

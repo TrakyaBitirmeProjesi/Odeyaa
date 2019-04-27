@@ -29,6 +29,7 @@ function aranan_yukle() {
 }
 
 function tum_arananlar() {
+    yapay_zeka();
     var arr = [];
     var link_arr = [];
     $.ajax({
@@ -71,6 +72,45 @@ function Islogin() {
             alert("Hata Oluştu");  
         }
     });
+}
+var urun_liste = ["gofret", "makarna", "yoğurt", "salam", "süt", "fıstık", "balık", "kalem", "soda"]
+function yapay_zeka() {
+    var product = urun_liste[Math.floor(Math.random() * 10)];
+
+    $.ajax({
+        url: "http://fiyatkontrol.tk/migros",
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+            'Access-Control-Allow-Headers': "Origin, Content-Type, X-Auth-Token",
+            'Access-Control-Allow-Credentials': "true"
+        },
+        xhrFields: {
+            withCredentials: false
+        },
+        data: { "product-name": product },
+        success: function (response) {
+            document.getElementById("img_1").src = response[0].resim;
+            document.getElementById("ad_1").innerText = response[0].urun ;
+            document.getElementById("fiyat_1").innerText = response[0].fiyat + " TL";
+            document.getElementById("a_1").href = response[0].link;
+
+            document.getElementById("img_2").src = response[1].resim;
+            document.getElementById("ad_2").innerText = response[1].urun;
+            document.getElementById("fiyat_2").innerText = response[1].fiyat + " TL";
+            document.getElementById("a_2").href = response[1].link;
+
+            document.getElementById("img_3").src = response[2].resim;
+            document.getElementById("ad_3").innerText = response[2].urun;
+            document.getElementById("fiyat_3").innerText = response[2].fiyat + " TL";
+            document.getElementById("a_3").href = response[2].link;
+        },
+        error: function (xhr) {
+            document.getElementById("demo").innerHTML = "Error";
+        }
+    });
+
+
 }
 
 
