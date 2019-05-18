@@ -33,6 +33,7 @@ function tum_arananlar() {
     var arr = [];
     var link_arr = [];
     $.ajax({
+        async: "false",
         url: "/Aranan/Son_Aranan_Urunler",
         data: { "aranan_kelime": "1" },
         headers: { 'Access-Control-Allow-Origin': 'http://localhost:50532/' },
@@ -51,6 +52,19 @@ function tum_arananlar() {
         error: function (xhr) {
         }
     });
+    $.ajax({
+        async: "false",
+        url: "/Home/Siparis_GetList",
+        data: { "product-name": 1 },
+        success: function (response) {
+            document.getElementById("liste").innerText = response;
+            basbana();
+        },
+        error: function (xhr) {
+            console.log("Hata Oluştu siparis_getlist");
+        }
+    });
+
 
 }
 function Islogin() {
@@ -73,10 +87,9 @@ function Islogin() {
         }
     });
 }
-var urun_liste = ["gofret", "makarna", "yoğurt", "salam", "süt", "fıstık", "balık", "kalem", "soda"]
+var urun_liste = ["gofret", "makarna", "yağ", "salam", "süt", "fındık", "balık", "kalem", "soda","deterjan"]
 function yapay_zeka() {
     var product = urun_liste[Math.floor(Math.random() * 10)];
-
     $.ajax({
         url: "http://fiyatkontrol.tk/migros",
         headers: {
@@ -111,6 +124,52 @@ function yapay_zeka() {
     });
 
 
+}
+
+
+
+function basbana() {
+    var deneme = document.getElementById("liste").innerHTML
+    $.ajax({
+        async: "false",
+        url: "http://fiyatkontrol.tk/yapay_knn",
+        data: { "liste": deneme },
+        success: function (response) {
+            console.log(response);
+            liste_gonder(response);
+        },
+        error: function (xhr) {
+            console.log("Hata Oluştu basbana");
+        }
+    });
+}
+
+function liste_al(userId) {
+    $.ajax({
+        async: "false",
+        url: "http://localhost:50532/Home/Siparis_GetList",
+        data: { "userId": userId },
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (xhr) {
+            console.log("Hata Oluştu basbana");
+        }
+    });
+}
+
+function liste_gonder(userId) {
+    $.ajax({
+        async: "false",
+        url: "http://localhost:50532/Home/liste_Xor",
+        data: { "uId": userId },
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (xhr) {
+            console.log("Hata Oluştu basbana");
+        }
+    });
 }
 
 

@@ -11,5 +11,7 @@ namespace Test_Project.Models
         public ApplicationUser user { get; set; }
         public float Toplam_Fiyat { get; set; }
         public DateTime Tarih { get; set; }
+        public string UserId { get; set; }
+        public string Kategori { get; set; }
     }
 }

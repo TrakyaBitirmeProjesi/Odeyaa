@@ -56,13 +56,14 @@ namespace Test_Project.Controllers
             return Json("true");
         }
         [Authorize]
-        public JsonResult Siparis_Olustur(float fiyat)
+        public JsonResult Siparis_Olustur(float fiyat,string kategori)
         {
             ApplicationUser user = _usermanager.FindByNameAsync(HttpContext.User.Identity.Name).Result;
             var Siparis = new Siparis();
             Siparis.Tarih = DateTime.Now.Date;
             Siparis.user = user;
             Siparis.Toplam_Fiyat = fiyat;
+            Siparis.Kategori = kategori;
             _ctx.Siparis.Add(Siparis);
             _ctx.SaveChanges();
             return Json(Siparis.Id);

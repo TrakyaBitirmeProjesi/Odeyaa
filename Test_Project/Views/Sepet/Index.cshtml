@@ -27,9 +27,28 @@
             <div class="card">
                 <div class="card-body">
                     <p class="card-text" id="toplam_fiyat"></p><br />
-                    <button style="width:125px;height:40px;" type="button" class="btn btn-success" id="siparisbtn" onclick="siparis_olustur()">Satın Al</button>
+                    <div class="form-group">
+                        <label for="sel1">Select list (select one):</label>
+                        <select class="form-control" id="sel1">
+                            <option value="kategori1">Süt ürünleri</option>
+                            <option value="kategori2">Et ürünleri</option>
+                            <option value="kategori3">Temel gıda</option>
+                            <option value="kategori4">İçecekler</option>
+                            <option value="kategori5">Atıştırmalıklar</option>
+                            <option value="kategori6">Şarküteri</option>
+                            <option value="kategori7">Kahvaltılıklar</option>
+                            <option value="kategori8">Meyve</option>
+                            <option value="kategori9">Sebze</option>
+                            <option value="kategori10">Temizlik ürünleri</option>
+                            <option value="kategori11">Kağıt</option>
+                            <option value="kategori12">Kozmetik</option>
+                            <option value="kategori13">Bebek ürünleri</option>
+                        </select>
+
+                        
+                        <button style="width:125px;height:40px;" type="button" class="btn btn-success" id="siparisbtn" onclick="siparis_olustur()">Satın Al</button>
+                    </div>
                 </div>
-            </div>
         </div>
         </center>
 </body>

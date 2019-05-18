@@ -93,12 +93,14 @@ function post_func2() {
 
 function siparis_olustur() {
     var fiyat = 0;
+    var e = document.getElementById("sel1");
+    var value = e.options[e.selectedIndex].value;
     for (var i in urun_dizisi) {
         fiyat = fiyat + urun_dizisi[i].fiyat;
     }
     $.ajax({
         url: "/Sepet/Siparis_Olustur",
-        data: { "fiyat": fiyat },
+        data: { "fiyat": fiyat, "kategori": value },
         xhrFields: {
             withCredentials: false
         },
