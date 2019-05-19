@@ -30,25 +30,10 @@ namespace Test_Project.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
         public IActionResult Islogin()
         {
             try
@@ -197,7 +182,6 @@ namespace Test_Project.Controllers
             }
             return Json(numbers);
         }
-
         public List<string> Siparis_GetListId2(string userId)
         {
             var numbers = new List<string>() { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" };
@@ -262,7 +246,7 @@ namespace Test_Project.Controllers
             }
             return numbers;
         }
-        public JsonResult liste_Xor(string uId)
+        public List<int> liste_Xor(string uId)
         {
             var firstUserList = new List<string>() { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" };
             ApplicationUser user = null;
@@ -270,20 +254,43 @@ namespace Test_Project.Controllers
             {
                 user = _usermanager.FindByNameAsync(HttpContext.User.Identity.Name).Result;
                 firstUserList = Siparis_GetListId2(user.Id);
+                var secondUserList = Siparis_GetListId2(uId);
+                List<int> xorListesi = new List<int>();
+                for (int i = 0; i < 13; i++)
+                {
+                    var xorSonuc = Convert.ToInt32(firstUserList[i]) ^ Convert.ToInt32(secondUserList[i]);
+                    xorListesi.Add(xorSonuc);
+                }
+                return xorListesi;
             }
             catch
             {
-                return Json("0");
+                var secondUserList = Siparis_GetListId2(uId);
+                List<int> xorListesi = new List<int>();
+                for (int i = 0; i < 13; i++)
+                {
+                    var xorSonuc = Convert.ToInt32(firstUserList[i]) ^ Convert.ToInt32(secondUserList[i]);
+                    xorListesi.Add(xorSonuc);
+                }
+                return xorListesi;
             }
-
-            var secondUserList = Siparis_GetListId2(uId);
-            List<int> xorListesi = new List<int>();
-            for (int i = 0; i<13; i++)
+        }
+        public List<string> Kategori_Listele(List<int> liste)
+        {
+            List<string> sonuclar = new List<string>();
+            for(int i = 0; i < 13; i++)
             {
-                var xorSonuc = Convert.ToInt32(firstUserList[i]) ^ Convert.ToInt32(secondUserList[i]);
-                xorListesi.Add(xorSonuc);
+                if(liste[i] == 1)
+                {
+                    sonuclar.Add("kategori" + Convert.ToString(i+1));
+                }
             }
-            return Json(xorListesi);
+              
+            return sonuclar;
+        }
+        public JsonResult KategoriOner(string uId)
+        {
+            return Json(Kategori_Listele(liste_Xor(uId)));
         }
     }
 }

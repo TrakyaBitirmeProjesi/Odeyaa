@@ -136,7 +136,7 @@ function basbana() {
         data: { "liste": deneme },
         success: function (response) {
             console.log(response);
-            liste_gonder(response);
+            kategori_oner(response);
         },
         error: function (xhr) {
             console.log("Hata Oluştu basbana");
@@ -158,16 +158,16 @@ function liste_al(userId) {
     });
 }
 
-function liste_gonder(userId) {
+function kategori_oner(userId) {
     $.ajax({
         async: "false",
-        url: "http://localhost:50532/Home/liste_Xor",
+        url: "http://localhost:50532/Home/KategoriOner",
         data: { "uId": userId },
         success: function (response) {
             console.log(response);
         },
         error: function (xhr) {
-            console.log("Hata Oluştu basbana");
+            console.log("Hata Oluştu listegonder");
         }
     });
 }
