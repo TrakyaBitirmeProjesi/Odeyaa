@@ -178,7 +178,7 @@ function onerilenler(liste) {
     var oneriler_div = document.getElementById("oneriler");
     liste.forEach(function (element) {
         console.log(element + "  " + kategori_cevirici(element));
-        var denem = `<div class="panel panel-default"><div class="panel-body" ><a href="/deenme"><img style="float:left;margin-right:50px;" src="/images/${element}.png" height="250" width="500" /><h3 style="margin-top:90px;">${kategori_cevirici(element)} Size Özel Fiyatlar</h3></a></div ></div >`;
+        var denem = `<div class="panel panel-default"><div class="panel-body" ><a href="/sonuclar?arama=${urun_cevirici(element)}"><img style="float:left;margin-right:50px;" src="/images/${element}.png" height="250" width="500" /><h3 style="margin-top:90px;">${kategori_cevirici(element)} Size Özel Fiyatlar</h3></a></div ></div >`;
 
         oneriler_div.innerHTML = denem + oneriler_div.innerHTML;
     });
@@ -225,6 +225,46 @@ function kategori_cevirici(kategoriId) {
     }
 }
 
+function urun_cevirici(kategoriId) {
+    if (kategoriId == "kategori1") {
+        return "Sut";
+    } else if (kategoriId == "kategori2") {
+        return "Et ";
+    }
+    else if (kategoriId == "kategori3") {
+        return "Bakliyat";
+    }
+    else if (kategoriId == "kategori4") {
+        return "icecek";
+    }
+    else if (kategoriId == "kategori5") {
+        return "gofret";
+    }
+    else if (kategoriId == "kategori6") {
+        return "salam";
+    }
+    else if (kategoriId == "kategori7") {
+        return "peynir";
+    }
+    else if (kategoriId == "kategori8") {
+        return "Meyve";
+    }
+    else if (kategoriId == "kategori9") {
+        return "Sebze";
+    }
+    else if (kategoriId == "kategori10") {
+        return "Temizlik";
+    }
+    else if (kategoriId == "kategori11") {
+        return "Kırtasiye";
+    }
+    else if (kategoriId == "kategori12") {
+        return "Kozmetik";
+    }
+    else if (kategoriId == "kategori13") {
+        return "Bebek";
+    }
+}
 
 
 
