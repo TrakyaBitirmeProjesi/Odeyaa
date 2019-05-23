@@ -29,7 +29,7 @@ function aranan_yukle() {
 }
 
 function tum_arananlar() {
-    yapay_zeka();
+    //yapay_zeka();
     var arr = [];
     var link_arr = [];
     $.ajax({
@@ -165,11 +165,64 @@ function kategori_oner(userId) {
         data: { "uId": userId },
         success: function (response) {
             console.log(response);
+            onerilenler(response);
+
         },
         error: function (xhr) {
             console.log("Hata Oluştu listegonder");
         }
     });
+}
+
+function onerilenler(liste) {
+    var oneriler_div = document.getElementById("oneriler");
+    liste.forEach(function (element) {
+        console.log(element + "  " + kategori_cevirici(element));
+        var denem = `<div class="panel panel-default"><div class="panel-body" ><a href="/deenme"><img style="float:left;margin-right:50px;" src="/images/${element}.png" height="250" width="500" /><h3 style="margin-top:90px;">${kategori_cevirici(element)} Size Özel Fiyatlar</h3></a></div ></div >`;
+
+        oneriler_div.innerHTML = denem + oneriler_div.innerHTML;
+    });
+}
+
+function kategori_cevirici(kategoriId) {
+    if (kategoriId == "kategori1") {
+        return "Süt Ürünlerinde";
+    } else if (kategoriId == "kategori2") {
+        return "Et Ürünlerinde ";
+    }
+    else if (kategoriId == "kategori3") {
+        return "Bakliyat Ürünlerinde";
+    }
+    else if (kategoriId == "kategori4") {
+        return "İçeceklerde";
+    }
+    else if (kategoriId == "kategori5") {
+        return "Atıştırmalıklar'da";
+    }
+    else if (kategoriId == "kategori6") {
+        return "Şarküteri Ürünlerinde";
+    }
+    else if (kategoriId == "kategori7") {
+        return "Kahvaltılıklar'da";
+    }
+    else if (kategoriId == "kategori8") {
+        return "Meyvelerde";
+    }
+    else if (kategoriId == "kategori9") {
+        return "Sebzelerde";
+    }
+    else if (kategoriId == "kategori10") {
+        return "Temizlik Ürünlerinde";
+    }
+    else if (kategoriId == "kategori11") {
+        return "Kırtasiye Ürünlerinde";
+    }
+    else if (kategoriId == "kategori12") {
+        return "Kozmetik Ürünlerinde";
+    }
+    else if (kategoriId == "kategori13") {
+        return "Bebek Ürünlerinde";
+    }
 }
 
 
